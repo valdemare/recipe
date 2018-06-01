@@ -1,7 +1,10 @@
 package com.valdemare.recipe.domain;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 public class UnitOfMeasure {
 
@@ -9,31 +12,5 @@ public class UnitOfMeasure {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-/*
-    private Ingredient ingredient;
 
-    public Ingredient getIngredient() {
-        return ingredient;
-    }
-
-    public void setIngredient(Ingredient ingredient) {
-        this.ingredient = ingredient;
-    }
-*/
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUom() {
-        return description;
-    }
-
-    public void setUom(String uom) {
-        this.description = uom;
-    }
 }
