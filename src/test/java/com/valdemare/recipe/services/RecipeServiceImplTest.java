@@ -54,7 +54,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    public void getRecipeCoomandByIdTest() throws Exception {
+    public void getRecipeCommandByIdTest() throws Exception {
         Recipe recipe = new Recipe();
         recipe.setId(1L);
         Optional<Recipe> recipeOptional = Optional.of(recipe);
@@ -87,6 +87,15 @@ public class RecipeServiceImplTest {
         assertEquals(recipes.size(), 1);
         verify(recipeRepository, times(1)).findAll();
         verify(recipeRepository, never()).findById(anyLong());
+    }
+
+    @Test
+    public void testDeleteById() throws Exception{
+        Long idToDelete = Long.valueOf(2L);
+
+        recipeService.deleteById(idToDelete);
+
+        verify(recipeService, times(1)).deleteById(anyLong());
     }
 
 }
