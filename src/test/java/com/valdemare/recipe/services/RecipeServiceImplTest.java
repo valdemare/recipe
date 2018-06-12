@@ -95,7 +95,7 @@ public class RecipeServiceImplTest {
 
         recipeService.deleteById(idToDelete);
 
-        verify(recipeService, times(1)).deleteById(anyLong());
+        verify(recipeRepository, times(1)).deleteById(anyLong());
     }
 
 }
